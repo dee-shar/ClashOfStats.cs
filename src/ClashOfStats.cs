@@ -11,7 +11,7 @@ namespace ClashOfStatsApi
         public ClashOfStats()
         {
             httpClient = new HttpClient();
-            httpClient.DefaultRequestHeaders.TryAddWithoutValidation("User-Agent", "Dart/2.18 (dart:io)");
+            httpClient.DefaultRequestHeaders.UserAgent.ParseAdd("Dart/2.18 (dart:io)");
             httpClient.DefaultRequestHeaders.Accept.Add(
                 new MediaTypeWithQualityHeaderValue("application/json"));
         }
