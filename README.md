@@ -1,8 +1,21 @@
-# clash_of_stats.sh
+# ClashOfStats.cs
 Mobile-API for [Clash of Stats](https://play.google.com/store/apps/details?id=com.clashofstats) which is Clash of Clan's number one application for statistics, rankings and history of Players and Clans
 
 ## Example
-```bash
-source ./clash_of_stats.sh
-get_players_ranking
+```cs
+using System;
+using ClashOfStatsApi;
+
+namespace Application
+{
+    internal class Program
+    {
+        static async Task Main()
+        {
+            var api = new ClashOfStats();
+            string playersTrophies = await api.GetPlayersTrophies();
+            Console.WriteLine(playersTrophies);
+        }
+    }
+}
 ```
